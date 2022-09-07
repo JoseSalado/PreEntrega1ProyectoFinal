@@ -6,11 +6,11 @@ let sorrentinos = [
 
 function inicio(){
    
-    alert(`¡Hola! ${nombre.toLocaleUpperCase()}, bienvenido/a a Trento Pastas `);
+    alert(`¡Hola! ${nombre.toLocaleUpperCase()} , bienvenido/a a Trento Pastas `);
 }
 
 function agregarProducto(){
-    producto = prompt("¿Que producto desea comprar? : \n \n 1 : Jamon y Queso , $500 \n 2 : Ternera y Queso , $550 \n 3 : Calabaza y Queso , $450");
+    producto = prompt("¿Que producto desea comprar? : \n \n 1 : Jamon y Queso , $500 \n \n 2 : Ternera y Queso , $550 \n \n 3 : Calabaza y Queso , $450");
       if ( producto=== "1"){
         
         tipo = sorrentinos[0].sabor;
@@ -33,8 +33,25 @@ function agregarProducto(){
         alert(`Eligio ${tipo}, Precio: $ ${resultado}`);
         carrito.push(sorrentinos[2]);
       }
-      opcion = prompt("Que desea realizar \n \n 1 : Realizar otra compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n 5 : Salir ");
+      opcion = prompt("Que desea realizar \n \n 1 : Realizar otra compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n \n 5 : Salir ");
 }
+
+function masVendido(){
+    let masVendidos = sorrentinos.filter((producto)=> producto.precio < 500 );
+    for(let masVendido of masVendidos){
+        alert(`Sorrentinos : ${masVendido.sabor} a : $${masVendido.precio}`);
+
+    }
+    opcion = prompt("Que desea realizar \n \n 1 : Realizar otra compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n \n 5 : Salir ");
+}
+
+function mostrarCarrito(){
+    carrito.forEach((producto)=>{
+        alert(`Sorrentinos ${producto.sabor} $${producto.precio} `)
+    })
+    opcion = prompt("Que desea realizar \n \n 1 : Realizar otra compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n \n 5 : Salir ");
+}
+
 
 function finalizarCompra(){
     let total = carrito.reduce((acc, el) => acc + el.precio , 0);
