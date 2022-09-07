@@ -42,14 +42,14 @@ function masVendido(){
         alert(`Sorrentinos : ${masVendido.sabor} a : $${masVendido.precio}`);
 
     }
-    opcion = prompt("Que desea realizar \n \n 1 : Realizar otra compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n \n 5 : Salir ");
+    opcion = prompt("Que desea realizar \n \n 1 : Realizar compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n \n 5 : Salir ");
 }
 
 function mostrarCarrito(){
     carrito.forEach((producto)=>{
         alert(`Sorrentinos ${producto.sabor} $${producto.precio} `)
     })
-    opcion = prompt("Que desea realizar \n \n 1 : Realizar otra compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n \n 5 : Salir ");
+    opcion = prompt("Que desea realizar \n \n 1 : Realizar compra  \n 2 : Mas Vendido \n 3 : Mostrar Carrito \n 4 : Pagar Compra \n \n 5 : Salir ");
 }
 
 
